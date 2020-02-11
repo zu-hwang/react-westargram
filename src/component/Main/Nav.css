@@ -1,0 +1,158 @@
+
+/*  
+ *
+ *  네비게이션 시작
+ *
+ */
+
+
+ .header-nav {
+  /* background-color: yellow; */
+  border-bottom : 1px solid #dbdbdb;
+  background-color: #fff;
+  height: 77px;
+  position: fixed;
+  /* top : 0;
+  left: 0; */
+  width: 100%;
+  z-index: 6;
+}
+
+
+.header-nav .container {
+  /* border-right: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb; */
+width: 935px;
+height: 100%;
+margin: 0 auto;
+padding : 26px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.header-nav img {
+  /* height: 25px; */
+  max-height: 30px;
+  position: relative;
+  top: 2px;
+}
+
+.right {
+  display: flex;
+  position: relative;
+  width : 25%;
+  height: 36px;
+  align-items: center;
+}
+
+.right div:first-child { 
+  /* logo-icon warp*/
+  height: 25px;
+  padding-right: 16px;
+}
+.right div:first-child img {
+  height: 25px;
+  position: relative;
+  top : 0px;
+}
+
+.right div:last-child {
+  /* log-text warp*/
+  /* 여기 보더 라인넣는것 말고 배경화면 방식으로 하는거는 오또케햄? 
+  나중에 트랜지션 넣는 듯 한딩 그래서
+  div태그로 넣은것 같은뒝..
+  */
+  border-left: 1px solid #262626; 
+  padding-left: 16px;
+  height: 30px;
+  width: 130px;
+}
+.right div:last-child img {
+  width: 103px;
+  height: 30px;
+  
+}
+.border {
+  /* background-color: #262626; */
+  /* width: 1px; */
+}
+
+.left {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left div {
+  padding-left :  28px;
+}
+
+.left div:last-child {
+  padding-right: 0px;
+}
+.left img {
+  height: 24px;
+}
+.img-explore {
+  height: 28px;
+}
+.center {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 215px;
+  position: relative;
+}
+
+form {
+  width: 100%;
+}
+.search-wrap input {
+  width : 100%;
+  height : 28px;
+  border-radius: 3px;
+  border : 1px solid #dbdbdb;
+  background-color: #fafafa;
+  position: relative;
+  display: flex;
+  /* align-items: cen; */
+}
+
+
+.search-up {
+  user-select: none; /* 마우스로 긁었을때 반응 없도록 !!!!*/
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top : 26px;
+}
+
+.search-up span {
+  font-size: 0.85em;
+  font-weight: normal;
+  color: #999;
+  z-index: 5;
+  padding-top: 1px;
+}
+.search-icon {
+  position: absolute;
+  width: 10px;
+  /* background-position: -400px -400px; */
+  /* background-size: contain; */
+  /* background-color: lawngreen; */
+  /* background: url(../img/searchicon.png)  -450px -688px; */
+  position: relative;
+  /* top: 3px; */
+  margin-right: 6px;
+  z-index: 5;
+}
+
+.search-icon img {
+  opacity : 0.5;
+  width: 100%;
+  padding-bottom: 2px;
+}

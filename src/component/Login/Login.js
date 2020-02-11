@@ -10,7 +10,7 @@ class Login extends Component {
         <main>
           <div className="center-wrap">
             <div className="login-wrap">
-              <h1></h1>
+              <div></div>
               <div className="form-wrap">
                 <form>
                   <div className="input-warp">

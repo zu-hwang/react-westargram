@@ -1,0 +1,90 @@
+
+
+/* 사이드 유저 정보 */
+
+
+.user-pic-wrap {
+  width: 34px;
+  /* height: 34px; */
+}
+
+.user-profile-wrap img {
+  border-radius: 25px;
+  width: 100%;
+}
+
+.user-profile-text {
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  position: relative;
+  /* top : -4px; */
+  width: 100%;
+}
+
+.user-profile-text div:first-child {
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  top: -1px;
+}
+.user-profile-text div:last-child {
+  font-weight: normal;
+  font-size: 12px;
+  color : #999;
+}
+
+
+.user-profile-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  z-index: -1;
+}
+
+
+.side-foot {
+  margin-top: 12px;
+  color: #c7c7c7;
+  font-size: 12px;
+}
+
+.side-foot ul {
+  margin-right: 6px;
+  margin-bottom: 12px;
+}
+.side-foot li {
+  display: inline;
+  line-height: 1.5em;
+
+}
+
+.side-foot li:after {
+  content: ' ・ ';
+}
+.side-foot li:last-child:after {
+  content: '';
+}
+
+
+.side-foot a {
+  color : #c7c7c7;
+}
+
+.follow-btn {
+  padding-right: 16px;
+  float: right;
+  
+}
+
+.follow-btn button {
+  
+  color: #3897f0;
+  /* width: 100%; */
+  border: none;
+  font-size: 12px;
+  font-weight: normal;
+}
+

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Login.css';
 
 class Login extends Component {
@@ -31,7 +32,9 @@ class Login extends Component {
 			userid: '',
 			password: '',
 			btnOpacityToggle: false,
-			pointer: 'default'
+			pointer: 'default',
+			visible: false,
+			showPw: false
 		};
 	}
 
@@ -39,6 +42,7 @@ class Login extends Component {
 	handleClick = (e) => {
 		// e.preventDefault();
 		console.log('버튼클릭 이벤트 시작');
+
 		for (let i = 0; i < this.state.userinfo.length; i++) {
 			// console.log('반복문 시작', i, this.state.userid, this.state.userinfo[i]);
 			if (
@@ -47,9 +51,9 @@ class Login extends Component {
 			) {
 				console.log('전부같앙');
 				// todo 페이지 이동하기!
+				this.props.history.push('/main');
 			} else {
 				// 인풋창 리셋
-
 				this.setState({ userid: '', password: '', btnOpacityToggle: false });
 			}
 		}
@@ -59,6 +63,9 @@ class Login extends Component {
 		if (e.code === 'Enter' && this.state.btnOpacityToggle) {
 			this.handleClick();
 		}
+	};
+	handleShowPw = (e) => {
+		this.setState({ showPw: !this.state.showPw });
 	};
 	// ! input Length check!
 	checkIdPw = (id, pw) => {
@@ -75,24 +82,32 @@ class Login extends Component {
 			this.setState({ btnOpacityToggle: false });
 		}
 	};
+
 	handleChangeId = async (e) => {
 		await this.setState({ userid: e.target.value });
 		// console.log('아이디', this.state.userid, '비번', this.state.password);
 		this.checkIdPw(this.state.userid, this.state.password);
 	};
+
 	handleChangePw = async (e) => {
 		await this.setState({ password: e.target.value });
+		if (this.state.password) {
+			this.setState({ visible: true });
+		}
 		this.checkIdPw(this.state.userid, this.state.password);
+		// async와 await는 처리작업을 할때 해당 정보를 받아 처리하기 전까지 기다리도록 하는것이 좋단다.
 	};
 
 	// ! 첫 로딩 이후 엔터 이벤트걸기
 	componentDidMount() {
+		// ! 여기에는 API/fatch 할때나 쓴단다 ㅋㅋ
 		window.addEventListener('keydown', this.handleKeypress);
 	}
 	// ! 로그인 된 이후 키다운 이벤트 리스너 제거
 	componentWillUnmount() {
 		window.removeEventListener('keydown', this.handleKeypress);
 	}
+
 	render() {
 		return (
 			<>
@@ -115,12 +130,20 @@ class Login extends Component {
 									<div className='input-warp'>
 										<input
 											onChange={this.handleChangePw}
-											type='password'
+											type={this.state.showPw ? 'text' : 'password'}
 											placeholder='비밀번호'
 											value={this.state.password}
 										/>
 									</div>
-									<button type='button' className='hide-show-pw-btn'>
+									<button
+										type='button'
+										onClick={this.handleShowPw}
+										className={
+											this.state.visible
+												? 'hide-show-pw-btn visible'
+												: 'hide-show-pw-btn hidden'
+										}>
+										{/* 'hide-show-pw-btn'> */}
 										비밀번호 표시
 									</button>
 									<div className='input-wrap'>
@@ -154,4 +177,4 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+export default withRouter(Login);

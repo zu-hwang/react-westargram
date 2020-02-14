@@ -33,21 +33,41 @@ class Feed extends Component {
 	};
 
 	replPaint = (id, user, text) => {
+		// 변수에 리플 객체 생성
 		let repl = { id: id, username: user, text: text };
-		repl = this.state.repl.push(repl);
-		this.setState({ repl: repl });
+		// 배열에 리플객체 푸시
+		let replArr = this.state.repl;
+		replArr.push(repl);
+		this.setState({ repl: replArr });
 		console.log('페인트완료');
 		return true;
 	};
+
 	// ! 엔터누르면 게시글 등록 > 버큰에 onChange
-	handleBtnChange = (e) => {
+	handlePressEnter = (e) => {
 		if (e.KeyCode === 13) {
 			// todo 버튼 클릭하면 내용 등록 > 버튼에 onClick  paint함수 실행
+			console.log(
+				'엔터눌렀네',
+				this.replId,
+				this.state.userid,
+				this.state.replVal
+			);
 			this.replPaint(this.replId, this.state.userid, this.state.replVal);
 		}
 	};
 	// todo 버튼 클릭하면 내용 등록 > 버튼에 onClick
-	handleBtnClick = (e) => {};
+	handleBtnClick = (e) => {
+		if (this.state.replVal) {
+			console.log(
+				'엔터눌렀네',
+				this.replId,
+				this.state.userid,
+				this.state.replVal
+			); //
+			this.replPaint(this.replId, this.state.userid, this.state.replVal);
+		}
+	};
 
 	// ! 리플이 3개 이상일때  {댓글더보기} 화면에 뿌리기
 	checkReplNum = () => {
@@ -144,20 +164,16 @@ class Feed extends Component {
 								</span>
 							) : null}
 
-							{/* 여기 댓글 추가 */}
-							<span className='others-repl'>
-								<a href='/' className='user-id'>
-									{/* 여기에 댓글쓴 유저 */}
-								</a>
-								{/* 여기에 댓글 내용 */}
+							{this.state.repl.map( repl => {
+								<span className='others-repl'>
+									<a href='/' className='user-id'>{repl.username}</a>{repl.text}
 								<button type='button' className='repl-hover-three-dot hidden'>
 									<img src={this.ThreeDotPic} alt='' />
 								</button>
 								<button type='button' className='heart-btn'>
 									<img src={this.HeartPic} alt='' />
 								</button>
-							</span>
-							{/* <!-- 댓글시작 --> */}
+							</span>}
 						</div>
 
 						<span className='feed-time'>2시간 전</span>
@@ -169,7 +185,7 @@ class Feed extends Component {
 							<div className='input-wrap'>
 								<input
 									onChange={this.handleInputVal}
-									onKeyDown={this.handleBtnChange} // ! 준식님 온첸지로 다 된다면서 왜 안돼요!!!!!! 왜안돼요!!!!
+									onKeyUp={this.handlePressEnter} // ! 준식님 온첸지로 다 된다면서 왜 안돼요!!!!!! 왜안돼요!!!!
 									className='repl-input'
 									type='text'
 									placeholder='댓글 달기...'

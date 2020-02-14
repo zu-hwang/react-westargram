@@ -51,6 +51,7 @@ class Login extends Component {
 			) {
 				console.log('전부같앙');
 				// todo 페이지 이동하기!
+				localStorage.setItem('userid', this.state.userid);
 				this.props.history.push('/main');
 			} else {
 				// 인풋창 리셋

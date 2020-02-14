@@ -1,247 +1,257 @@
-
-
 /*
 Feeds 
 */
 
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.opacity-1-0 {
+	opacity: 1;
+}
+.opacity-0-5 {
+	opacity: 0.5;
+}
+
+.pointer {
+	cursor: pointer;
+}
+.default-mouse {
+	cursor: default;
+}
+.visible {
+	visibility: visible;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
 article {
-  margin-bottom: 60px;
+	margin-bottom: 60px;
 }
 .feed-user-id-box {
-  /* overflow: hidden; */
-  height: 60px;
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: flex-start;
-  padding: 16px;
-  border-bottom: 1px solid #efefef;
+	/* overflow: hidden; */
+	height: 60px;
+	display: flex;
+	/* justify-content: space-between; */
+	justify-content: flex-start;
+	padding: 16px;
+	border-bottom: 1px solid #efefef;
 }
 
 .feed-user-pic-wrap {
-  width: 32px;
-  height: 32px;
-  position: relative;
+	width: 32px;
+	height: 32px;
+	position: relative;
 }
 
 .feed-user-pic-wrap img {
-  width: 100%;
-  border-radius: 32px;
-  position: relative;
-  top : -1px;
+	width: 100%;
+	border-radius: 32px;
+	position: relative;
+	top: -1px;
 }
 
 .feed-user-id {
-  margin-left: 15px;
-  position: relative;
-  top :5px;
-  font-size: 14px;
-  font-weight: 600;
+	margin-left: 15px;
+	position: relative;
+	top: 5px;
+	font-size: 14px;
+	font-weight: 600;
 }
 .feed-three-dot-wrap {
-  display: flex;
-  justify-content : flex-end;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  top: 2px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	position: relative;
+	top: 2px;
 }
 .three-dot-menu img {
-  width: 25px;
-  height: 25zpx;
-  /* background-color: yellow; */
+	width: 25px;
+	height: 25zpx;
+	/* background-color: yellow; */
 }
-
-
 
 /* 피드 이미지 */
 
 .feed-img-wrap {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  /* height: 612px;  */
-  /* 여기서 높이 지정안하고 이미지 높이 상속받으려면 오케함..ㅠ 노랑이 계속 모여서 듄나 짱남.*/
-  background-color: yellow;
-  border-bottom: 1px solid #efefef;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	/* height: 612px;  */
+	/* 여기서 높이 지정안하고 이미지 높이 상속받으려면 오케함..ㅠ 노랑이 계속 모여서 듄나 짱남.*/
+	background-color: yellow;
+	border-bottom: 1px solid #efefef;
 }
 .feed-img-wrap img {
-  width: 100%;
-  max-height: inherit;
-  display: block;
-  /* 민지님 추측 > 이미지는 기본 display:inline; 인라인 자체에 여윳값이 들어가도록 설정되어있는것이아닐까? 왜 블럭은 되고 인라인은 공백이 생겨 ?   */
-  /* display: inline; */
+	width: 100%;
+	max-height: inherit;
+	display: block;
+	/* 민지님 추측 > 이미지는 기본 display:inline; 인라인 자체에 여윳값이 들어가도록 설정되어있는것이아닐까? 왜 블럭은 되고 인라인은 공백이 생겨 ?   */
+	/* display: inline; */
 }
 
 /* 피드 아이콘 */
 
 .feed-icons-wrap {
-  height: 56px;
-  padding : 16px 0 16px 16px;
-  display: flex;
-  justify-content: space-between;
+	height: 56px;
+	padding: 16px 0 16px 16px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .feed-icons-left {
-  display: flex;
-  justify-content: flex-start;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .feed-icons-wrap img {
-  width: 24px;
-  margin-right : 16px;
+	width: 24px;
+	margin-right: 16px;
 }
 .icon-bookmark > img {
-  margin-right : 0px;
+	margin-right: 0px;
 }
-
-
 
 /* 피드 좋아요 버튼 */
 .feed-like-text-wrap {
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 .feed-like-text-wrap button {
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
 }
- 
-
 
 /* 피드 댓글 목록*/
 
 .feed-repl-wrap {
-  border-bottom: 1px solid #efefef;
-  padding: 0px 16px 5px 16px;
-  font-size: 14px;
-  letter-spacing: -0.3px;
+	border-bottom: 1px solid #efefef;
+	padding: 0px 16px 5px 16px;
+	font-size: 14px;
+	letter-spacing: -0.3px;
 }
 .feed-repl-wrap span {
-  padding: 2px 0 ;
+	padding: 2px 0;
 }
 .feed-repl-wrap span a {
-  font-weight: normal;
-  font-size: 13px;
+	font-weight: normal;
+	font-size: 13px;
 }
 
 .feed-repl-wrap a.user-id {
-  margin-right: 5px;
-  font-weight: bold;
+	margin-right: 5px;
+	font-weight: bold;
 }
 
 .feed-repl-wrap button.all-repl {
-  border: none;
-  display: inline-block;
-  font-weight: 600;
-  font-size: 12px;
-  padding-left: 3px;
-  color : #c7c7c7;
+	border: none;
+	display: inline-block;
+	font-weight: 600;
+	font-size: 12px;
+	padding-left: 3px;
+	color: #c7c7c7;
 }
 
 .feed-repls > span {
-  display: inline-block;
-  width: 100%;
-  padding-bottom: 5px;
-
+	display: inline-block;
+	width: 100%;
+	padding-bottom: 5px;
 }
 
 .others-repl {
-  display: flex;
-  position: relative;
+	display: flex;
+	position: relative;
 }
-
 
 button.repl-hover-three-dot {
-  float: right;
-  position: absolute;
-  right : 37px;
-  /* top : 9px; */
-  border: none;
-  width: 10px;
+	float: right;
+	position: absolute;
+	right: 37px;
+	/* top : 9px; */
+	border: none;
+	width: 10px;
 }
 button.repl-hover-three-dot img {
-  display: block;
-  width: 20px
+	display: block;
+	width: 20px;
 }
 .others-repl-icons-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .mention {
-  margin-right: 5px;
-  color : #003569;
+	margin-right: 5px;
+	color: #003569;
 }
 .mention a {
-  color: #003569;
+	color: #003569;
 }
 
-.feed-time  {
-  font-size: 10px;
-  color:#c7c7c7;  
+.feed-time {
+	font-size: 10px;
+	color: #c7c7c7;
 }
-
 
 .heart-btn {
-  display: inline-block;
-  position: relative;
-  top: 4px;
-  float : right;
-  height: 14px;
-  width: 14px;
-  opacity: .5;
-  border: none;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	float: right;
+	height: 14px;
+	width: 14px;
+	opacity: 0.5;
+	border: none;
 }
-
 
 .heart-btn img {
-  width: 100%;
+	width: 100%;
 }
-
-
-
 
 /* 피드 댓글 쓰기 */
 .send-repl-wrap {
-  height: 56px;
-  padding: 10px 0 10px 16px;
-  display: flex;
-  justify-content: space-between;
+	height: 56px;
+	padding: 10px 0 10px 16px;
+	display: flex;
+	justify-content: space-between;
 }
 .send-repl-wrap .form-div {
-  width: 92%;
-  position: relative;
+	width: 92%;
+	position: relative;
 }
 .send-repl-wrap input {
-  border: none;
-  width: 100%;
-  font-size: 14px;
-  position: relative;
-  /* top: 3px; */
-  background-color: #fff;
+	border: none;
+	width: 100%;
+	font-size: 14px;
+	position: relative;
+	/* top: 3px; */
+	background-color: #fff;
 }
 
 .send-repl-wrap input::placeholder {
-  color: #c7c7c7;
-  font-size: 14px;
-  position: relative;
+	color: #c7c7c7;
+	font-size: 14px;
+	position: relative;
 }
 
-
 .submit-wrap {
-  position: absolute;
-  right: -31px;
-  bottom: 8px;
+	position: absolute;
+	right: -31px;
+	bottom: 8px;
 }
 
 .submit-wrap button {
-  color: #003569;
-  border: none;
-  font-weight: 600;
-  font-size: 14px;
-  /* opacity: .5; */
-  cursor: pointer;
+	color: #003569;
+	border: none;
+	font-weight: 600;
+	font-size: 14px;
+	/* opacity: .5; */
 }
-
-

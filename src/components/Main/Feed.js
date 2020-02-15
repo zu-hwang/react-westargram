@@ -11,9 +11,13 @@ class Feed extends Component {
 		this.state = {
 			userid: localStorage.getItem('userid'),
 			repl: [],
+			replShow: true,
 			btnRepl: false,
-			replVal: ''
+			replVal: '',
+			delBtnHover: false
 		};
+		this.styleTrue = 'repl-hover-three-dot visible';
+		this.styleFalse = 'repl-hover-three-dot hidden';
 		this.replId = 0;
 		this.maxRepl = 3;
 		this.ThreeDotPic =
@@ -22,8 +26,19 @@ class Feed extends Component {
 			'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png';
 	}
 
+	handleMouseOver = (e) => {
+		if (this.state.delBtnHover === false) {
+			this.setState({ delBtnHover: true });
+		}
+	};
+	handleMouseOut = () => {
+		if (this.state.delBtnHover === true) {
+			this.setState({ delBtnHover: false });
+		}
+	};
 	// ! 인풋 내용이 있을때, 밸류 받아 state저장. 게시버튼 활성화
 	handleInputVal = (e) => {
+		//onChange
 		if (e.target.value) {
 			console.log('인풋밸류 셋');
 			this.setState({ btnRepl: true, replVal: e.target.value });
@@ -35,48 +50,46 @@ class Feed extends Component {
 	replPaint = (id, user, text) => {
 		// 변수에 리플 객체 생성
 		let repl = { id: id, username: user, text: text };
+		this.replId++;
 		// 배열에 리플객체 푸시
 		let replArr = this.state.repl;
 		replArr.push(repl);
-		this.setState({ repl: replArr });
-		console.log('페인트완료');
+		this.setState({ repl: replArr, replVal: '', btnRepl: false });
+		console.log('페인트완료 & 인풋창 리셋');
 		return true;
 	};
 
-	// ! 엔터누르면 게시글 등록 > 버큰에 onChange
+	// ! 엔터누르면 게시글 등록
 	handlePressEnter = (e) => {
-		if (e.KeyCode === 13) {
-			// todo 버튼 클릭하면 내용 등록 > 버튼에 onClick  paint함수 실행
-			console.log(
-				'엔터눌렀네',
-				this.replId,
-				this.state.userid,
-				this.state.replVal
-			);
+		if (e.key === 'Enter' && this.state.replVal) {
+			// 버튼 클릭하면 내용 등록 > 버튼에 onClick  paint함수 실행
 			this.replPaint(this.replId, this.state.userid, this.state.replVal);
+			e.target.value = '';
 		}
 	};
-	// todo 버튼 클릭하면 내용 등록 > 버튼에 onClick
+
+	// ! 버튼 클릭하면 게시글 등록
 	handleBtnClick = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
 		if (this.state.replVal) {
-			console.log(
-				'엔터눌렀네',
-				this.replId,
-				this.state.userid,
-				this.state.replVal
-			); //
 			this.replPaint(this.replId, this.state.userid, this.state.replVal);
+			// ....replVal = '';
+			// todo 버튼 클릭했을때 인풋창의 밸류 초기화 하려는데 버튼 클릭으로는 우케함..
+			// e의 타겟은 버튼이라 잡히지 않음.
 		}
+	};
+	handleDelRepl = (e) => {
+		console.log(e.target.key); // 이미지 태그
+		console.log(e.target); // 이미지 태그
+		// debugger;
 	};
 
 	// ! 리플이 3개 이상일때  {댓글더보기} 화면에 뿌리기
 	checkReplNum = () => {
-		if (this.replId >= this.maxRepl) {
-			return true;
-		} else {
-			return false;
-		}
+		this.setState({ replShow: true });
 	};
+
 	render() {
 		return (
 			<div className='feeds'>
@@ -158,22 +171,44 @@ class Feed extends Component {
 								<span>...</span>
 								<button className='all-repl'>더보기</button>
 							</span>
-							{this.checkReplNum() ? (
+							{/* 여기부터 댓글 더보기*/}
+							{this.checkReplNum ? (
 								<span className='mention'>
 									<a href='/'>댓글 {this.replId}개 모두보기</a>
 								</span>
 							) : null}
 
-							{this.state.repl.map( repl => {
-								<span className='others-repl'>
-									<a href='/' className='user-id'>{repl.username}</a>{repl.text}
-								<button type='button' className='repl-hover-three-dot hidden'>
-									<img src={this.ThreeDotPic} alt='' />
-								</button>
-								<button type='button' className='heart-btn'>
-									<img src={this.HeartPic} alt='' />
-								</button>
-							</span>}
+							{/* 여기부터 댓글 목록 출력 */}
+							{/* todo 댓글의 갯수가 2개 이하일 경우 모두 출력, 3개 이상일 경우 최근 2개만 출력 */}
+							{this.state.repl.map((repl) => {
+								return (
+									// 리턴 묶어주기 꼭하기. // 내용 많으니 컴포넌트 만들까...?
+									<span
+										id={repl.id}
+										key={repl.id}
+										className='others-repl'
+										onMouseOver={this.handleMouseOver}
+										onMouseOut={this.handleMouseOut}>
+										<a key={repl.id + 'a'} href='/' className='user-id'>
+											{repl.username}
+										</a>
+										{repl.text}
+										<button
+											type='button'
+											onClick={this.handleDelRepl}
+											className={
+												this.state.delBtnHover
+													? this.styleTrue
+													: this.styleFalse
+											}>
+											<img src={this.ThreeDotPic} alt='' />
+										</button>
+										<button type='button' className='heart-btn'>
+											<img src={this.HeartPic} alt='' />
+										</button>
+									</span>
+								);
+							})}
 						</div>
 
 						<span className='feed-time'>2시간 전</span>
@@ -184,8 +219,11 @@ class Feed extends Component {
 						<div className='form-div'>
 							<div className='input-wrap'>
 								<input
+									value={this.state.replVal} //! 여기서 이거 주면 나중에 인풋에서 1자리 안지워짐
+									// ! 인풋창 오류 1. 인풋창의 밸류 다 지워도 state에는 마지막 자리가 남아있다. 다지워지지 않고, 빈문자열일때 엔터치면 state에 남아있더 한자리 수가 등록된당.
+									// ! state의 인풋창 내용이 안지워저서, 인풋창도 안지워짐.. state가 고대로 반영되니. state를 지울수 있는 법을 찾자.
 									onChange={this.handleInputVal}
-									onKeyUp={this.handlePressEnter} // ! 준식님 온첸지로 다 된다면서 왜 안돼요!!!!!! 왜안돼요!!!!
+									onKeyUp={this.handlePressEnter} // ! 준식님 온첸지로 왜안될까요..?
 									className='repl-input'
 									type='text'
 									placeholder='댓글 달기...'

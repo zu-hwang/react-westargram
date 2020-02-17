@@ -119,7 +119,7 @@ class Side extends Component {
 							<ul>
 								{this.state.members.map((user) => {
 									return (
-										<li key={user.id} id={user.id}>
+										<li key={user.id}>
 											<div className='user-profile-wrap padding10'>
 												<div className='user-pic-wrap2'>
 													<img className='user-pic' src={user.userPic} alt='' />

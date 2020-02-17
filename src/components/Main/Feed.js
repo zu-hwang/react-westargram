@@ -14,7 +14,8 @@ class Feed extends Component {
 			replShow: true,
 			btnRepl: false,
 			replVal: '',
-			delBtnHover: false
+			delBtnHover: false,
+			selectrepl: ''
 		};
 		this.styleTrue = 'repl-hover-three-dot visible';
 		this.styleFalse = 'repl-hover-three-dot hidden';
@@ -39,7 +40,8 @@ class Feed extends Component {
 	// ! 인풋 내용이 있을때, 밸류 받아 state저장. 게시버튼 활성화
 	handleInputVal = (e) => {
 		//onChange
-		if (e.target.value) {
+		console.log(e.target.value.length);
+		if (e.target.value.length > -1) {
 			console.log('인풋밸류 셋');
 			this.setState({ btnRepl: true, replVal: e.target.value });
 		} else {
@@ -62,7 +64,7 @@ class Feed extends Component {
 	// ! 엔터누르면 게시글 등록
 	handlePressEnter = (e) => {
 		if (e.key === 'Enter' && this.state.replVal) {
-			// 버튼 클릭하면 내용 등록 > 버튼에 onClick  paint함수 실행
+			// 버튼 클릭하면 내용 등록 > 버튼에 onClic k  paint함수 실행
 			this.replPaint(this.replId, this.state.userid, this.state.replVal);
 			e.target.value = '';
 		}
@@ -80,15 +82,27 @@ class Feed extends Component {
 		}
 	};
 	handleDelRepl = (e) => {
-		console.log(e.target.key); // 이미지 태그
+		console.log(e.target.id);
+		this.setState();
+		if (e.target.id in this.state.repl[e.target.id]) {
+		}
 		console.log(e.target); // 이미지 태그
 		// debugger;
 	};
 
 	// ! 리플이 3개 이상일때  {댓글더보기} 화면에 뿌리기
-	checkReplNum = () => {
-		this.setState({ replShow: true });
-	};
+	// checkReplNum = () => {
+	// 	if (this.replId < this.maxRepl) {
+	// 		// ? 2개 이하일때 댓글 다 써지기
+	// 		this.setState({ replShow: true });
+	// 		this.setState({ replShowMax: false });
+	// 	} else if (this.replId >= this.maxRepl) {
+	// 		// ? 댓글 3개 이상일때, 안내문에 댓글 모두보기 오픈,
+	// 		// ? 최신 댓글 2개 오픈
+	// 		this.setState({ replShowMax: true }); // for 실행
+	// 		this.setState({ replshow: false }); // map 실행
+	// 	}
+	// };
 
 	render() {
 		return (
@@ -174,7 +188,10 @@ class Feed extends Component {
 							{/* 여기부터 댓글 더보기*/}
 							{this.checkReplNum ? (
 								<span className='mention'>
-									<a href='/'>댓글 {this.replId}개 모두보기</a>
+									<span
+										onClick={this.setState({ replShow: !this.state.replShow })}>
+										댓글 {this.replId}개 모두보기
+									</span>
 								</span>
 							) : null}
 
@@ -201,7 +218,12 @@ class Feed extends Component {
 													? this.styleTrue
 													: this.styleFalse
 											}>
-											<img src={this.ThreeDotPic} alt='' />
+											<img
+												// onClick={this.handleDelRepl}
+												id={repl.id}
+												src={this.ThreeDotPic}
+												alt=''
+											/>
 										</button>
 										<button type='button' className='heart-btn'>
 											<img src={this.HeartPic} alt='' />
@@ -222,6 +244,7 @@ class Feed extends Component {
 									value={this.state.replVal} //! 여기서 이거 주면 나중에 인풋에서 1자리 안지워짐
 									// ! 인풋창 오류 1. 인풋창의 밸류 다 지워도 state에는 마지막 자리가 남아있다. 다지워지지 않고, 빈문자열일때 엔터치면 state에 남아있더 한자리 수가 등록된당.
 									// ! state의 인풋창 내용이 안지워저서, 인풋창도 안지워짐.. state가 고대로 반영되니. state를 지울수 있는 법을 찾자.
+									// * 조건문을 변경했더니 잘됨 ! 조건문 문제였나봐욥! 해결!
 									onChange={this.handleInputVal}
 									onKeyUp={this.handlePressEnter} // ! 준식님 온첸지로 왜안될까요..?
 									className='repl-input'
@@ -235,7 +258,7 @@ class Feed extends Component {
 									style={{ cursor: this.state.replVal ? 'pointer' : 'dafault' }}
 									// 여기도 마우스 커서 안먹음..ㅠㅠ
 									className={
-										this.state.btnRepl
+										this.state.replVal
 											? 'repl-input opacity-1-0 pointer'
 											: 'repl-input opacity-0-5 default-mouse'
 									}

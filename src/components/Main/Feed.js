@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Repl from './Repl';
 // 스타일 임포트
 import '../Main/Feed.css';
 // 이미지 임포트
@@ -14,35 +15,25 @@ class Feed extends Component {
 			replShow: true,
 			btnRepl: false,
 			replVal: '',
-			delBtnHover: false,
+
 			selectrepl: ''
 		};
 		this.styleTrue = 'repl-hover-three-dot visible';
 		this.styleFalse = 'repl-hover-three-dot hidden';
 		this.replId = 0;
 		this.maxRepl = 3;
-		this.ThreeDotPic =
+		this.threeDotPic =
 			'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png';
-		this.HeartPic =
+		this.heartPic =
 			'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png';
 	}
 
-	handleMouseOver = (e) => {
-		if (this.state.delBtnHover === false) {
-			this.setState({ delBtnHover: true });
-		}
-	};
-	handleMouseOut = () => {
-		if (this.state.delBtnHover === true) {
-			this.setState({ delBtnHover: false });
-		}
-	};
 	// ! 인풋 내용이 있을때, 밸류 받아 state저장. 게시버튼 활성화
 	handleInputVal = (e) => {
 		//onChange
-		console.log(e.target.value.length);
+		// console.log(e.target.value.length);
 		if (e.target.value.length > -1) {
-			console.log('인풋밸류 셋');
+			// console.log('인풋밸류 셋');
 			this.setState({ btnRepl: true, replVal: e.target.value });
 		} else {
 			this.setState({ btnRepl: false });
@@ -81,28 +72,28 @@ class Feed extends Component {
 			// e의 타겟은 버튼이라 잡히지 않음.
 		}
 	};
-	handleDelRepl = (e) => {
-		console.log(e.target.id);
-		this.setState();
-		if (e.target.id in this.state.repl[e.target.id]) {
-		}
-		console.log(e.target); // 이미지 태그
-		// debugger;
-	};
 
 	// ! 리플이 3개 이상일때  {댓글더보기} 화면에 뿌리기
-	// checkReplNum = () => {
-	// 	if (this.replId < this.maxRepl) {
-	// 		// ? 2개 이하일때 댓글 다 써지기
-	// 		this.setState({ replShow: true });
-	// 		this.setState({ replShowMax: false });
-	// 	} else if (this.replId >= this.maxRepl) {
-	// 		// ? 댓글 3개 이상일때, 안내문에 댓글 모두보기 오픈,
-	// 		// ? 최신 댓글 2개 오픈
-	// 		this.setState({ replShowMax: true }); // for 실행
-	// 		this.setState({ replshow: false }); // map 실행
-	// 	}
-	// };
+	checkReplNum = () => {
+		if (this.replId < this.maxRepl) {
+			// ? 2개 이하일때 댓글 다 써지기
+			this.setState({ replShow: true });
+			this.setState({ replShowMax: false });
+		} else if (this.replId >= this.maxRepl) {
+			// ? 댓글 3개 이상일때, 안내문에 댓글 모두보기 오픈,
+			// ? 최신 댓글 2개 오픈
+			this.setState({ replShowMax: true }); // for 실행
+			this.setState({ replshow: false }); // map 실행
+		}
+	};
+	handleDelRepl = (e) => {
+		console.log('과연실행될뀨?');
+		const newRepl = this.state.repl.filter((rp) => rp.id !== e.tergat.id);
+		this.setState({ repl: newRepl });
+	};
+	componentWillUnmount = () => {
+		console.log('componentWillUnmount');
+	};
 
 	render() {
 		return (
@@ -118,7 +109,7 @@ class Feed extends Component {
 						<div className='feed-three-dot-wrap'>
 							<div className='three-dot-menu'>
 								<a href='/'>
-									<img src={this.ThreeDotPic} alt='' />
+									<img src={this.threeDotPic} alt='' />
 								</a>
 							</div>
 						</div>
@@ -132,7 +123,7 @@ class Feed extends Component {
 						<div className='feed-icons-left'>
 							<div className='icon-heart'>
 								<a href='/'>
-									<img src={this.HeartPic} alt='' />
+									<img src={this.heartPic} alt='' />
 								</a>
 							</div>
 							<div className='icon-balloon'>
@@ -186,49 +177,27 @@ class Feed extends Component {
 								<button className='all-repl'>더보기</button>
 							</span>
 							{/* 여기부터 댓글 더보기*/}
-							{this.checkReplNum ? (
+							{this.checkReplNum && (
 								<span className='mention'>
-									<span
-										onClick={this.setState({ replShow: !this.state.replShow })}>
-										댓글 {this.replId}개 모두보기
-									</span>
+									<span>댓글 {this.replId}개 모두보기</span>
 								</span>
-							) : null}
+							)}
 
 							{/* 여기부터 댓글 목록 출력 */}
 							{/* todo 댓글의 갯수가 2개 이하일 경우 모두 출력, 3개 이상일 경우 최근 2개만 출력 */}
 							{this.state.repl.map((repl) => {
 								return (
 									// 리턴 묶어주기 꼭하기. // 내용 많으니 컴포넌트 만들까...?
-									<span
-										id={repl.id}
+									<Repl
+										onClick={this.handleDelRepl}
 										key={repl.id}
-										className='others-repl'
-										onMouseOver={this.handleMouseOver}
-										onMouseOut={this.handleMouseOut}>
-										<a key={repl.id + 'a'} href='/' className='user-id'>
-											{repl.username}
-										</a>
-										{repl.text}
-										<button
-											type='button'
-											onClick={this.handleDelRepl}
-											className={
-												this.state.delBtnHover
-													? this.styleTrue
-													: this.styleFalse
-											}>
-											<img
-												// onClick={this.handleDelRepl}
-												id={repl.id}
-												src={this.ThreeDotPic}
-												alt=''
-											/>
-										</button>
-										<button type='button' className='heart-btn'>
-											<img src={this.HeartPic} alt='' />
-										</button>
-									</span>
+										id={repl.id}
+										replUser={repl.username}
+										replText={repl.text}
+										threeDotPic={this.threeDotPic}
+										heartPic={this.heartPic}
+										//! 프롭스 넘겨주고. 프롭스명으로 this.props.id 같이 쓴다.
+									/>
 								);
 							})}
 						</div>

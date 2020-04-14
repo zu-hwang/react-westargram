@@ -6,29 +6,30 @@ class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userinfo: [
-				{
-					id: '0',
-					userid: 'zuzu',
-					password: '0000',
-					img: '',
-					intro: ''
-				},
-				{
-					id: '1',
-					userid: 'wecode',
-					password: '1111',
-					img: '',
-					intro: ''
-				},
-				{
-					id: '2',
-					userid: 'wework',
-					password: '2222',
-					img: '',
-					intro: ''
-				}
-			],
+			userinfo: [],
+			// userinfo: [
+			// 	{
+			// 		id: '0',
+			// 		userid: 'zuzu',
+			// 		password: '0000',
+			// 		img: '',
+			// 		intro: ''
+			// 	},
+			// 	{
+			// 		id: '1',
+			// 		userid: 'wecode',
+			// 		password: '1111',
+			// 		img: '',
+			// 		intro: ''
+			// 	},
+			// 	{
+			// 		id: '2',
+			// 		userid: 'wework',
+			// 		password: '2222',
+			// 		img: '',
+			// 		intro: ''
+			// 	}
+			// ],
 			userid: '',
 			password: '',
 			btnOpacityToggle: false,
@@ -37,27 +38,36 @@ class Login extends Component {
 			showPw: false
 		};
 	}
-
+  // 메인페이지로 이동
+  goToMain = () => {
+    this.props.history.push('/main');
+  }
 	// ! 버튼 클릭 이벤트
 	handleClick = (e) => {
 		// e.preventDefault();
 		console.log('버튼클릭 이벤트 시작');
-
-		for (let i = 0; i < this.state.userinfo.length; i++) {
-			// console.log('반복문 시작', i, this.state.userid, this.state.userinfo[i]);
-			if (
-				this.state.userid === this.state.userinfo[i].userid &&
-				this.state.password === this.state.userinfo[i].password
-			) {
-				console.log('전부같앙');
-				// todo 페이지 이동하기!
-				localStorage.setItem('userid', this.state.userid);
-				this.props.history.push('/main');
-			} else {
-				// 인풋창 리셋
-				this.setState({ userid: '', password: '', btnOpacityToggle: false });
-			}
-		}
+		fetch('http://10.58.4.9:8000/account/sign_in', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				user_name: this.state.userid,
+				password: this.state.password
+			})
+		})
+			.then((res) => {
+				console.log('응답', res);
+				return res.json();
+			})
+			.then((res) => {
+				console.log('제이슨응답', res);
+				if (res.token) {
+					console.log('제이슨토큰응답', res.token);
+					localStorage.setItem('westa-token', res.token);
+          this.goToMain()
+        }
+      });
 	};
 	handleKeypress = (e) => {
 		// console.dir(e);

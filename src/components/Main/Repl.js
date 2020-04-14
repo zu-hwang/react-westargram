@@ -23,11 +23,7 @@ class Repl extends Component {
 			this.setState({ delBtnHover: false });
 		}
 	};
-	handleDelRepl = (e) => {
-		console.log('과연실행될뀨?');
-		const newRepl = this.state.repl.filter((rp) => rp.id !== e.tergat.id);
-		this.setState({ repl: newRepl });
-	};
+
 	render() {
 		return (
 			<span
@@ -41,7 +37,7 @@ class Repl extends Component {
 				{this.props.replText}
 				<button
 					type='button'
-					onClick={this.handleDelRepl}
+					onClick={this.props.handleDelRepl}
 					className={this.state.delBtnHover ? this.styleTrue : this.styleFalse}>
 					<img id={this.props.id} src={this.props.threeDotPic} alt='' />
 				</button>

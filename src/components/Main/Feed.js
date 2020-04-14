@@ -88,7 +88,9 @@ class Feed extends Component {
 	};
 	handleDelRepl = (e) => {
 		console.log('과연실행될뀨?');
-		const newRepl = this.state.repl.filter((rp) => rp.id !== e.tergat.id);
+		const newRepl = this.state.repl.filter(
+			(rp) => rp.id !== e.tergat.parentNode.id
+		);
 		this.setState({ repl: newRepl });
 	};
 	componentWillUnmount = () => {
@@ -189,13 +191,13 @@ class Feed extends Component {
 								return (
 									// 리턴 묶어주기 꼭하기. // 내용 많으니 컴포넌트 만들까...?
 									<Repl
-										onClick={this.handleDelRepl}
 										key={repl.id}
 										id={repl.id}
 										replUser={repl.username}
 										replText={repl.text}
 										threeDotPic={this.threeDotPic}
 										heartPic={this.heartPic}
+										handleDelRepl={this.handleDelRepl}
 										//! 프롭스 넘겨주고. 프롭스명으로 this.props.id 같이 쓴다.
 									/>
 								);

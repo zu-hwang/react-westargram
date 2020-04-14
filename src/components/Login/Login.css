@@ -1,153 +1,153 @@
 main {
-	height: 100%;
-	max-width: 935px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
+  height: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-	text-decoration: none;
-	color: #262626;
+  text-decoration: none;
+  color: #262626;
 }
 
 .form-div,
 input,
 button {
-	box-shadow: none;
-	outline: none;
-	/* 인풋장 선택시 파란줄 없애기 */
+  box-shadow: none;
+  outline: none;
+  /* 인풋장 선택시 파란줄 없애기 */
 }
 
 .hide {
-	display: none;
+  display: none;
 }
 
 .show {
-	display: block;
+  display: block;
 }
 
 .opacity-1-0 {
-	opacity: 1;
+  opacity: 1;
 }
 .opacity-0-5 {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 .visible {
-	visibility: visible;
+  visibility: visible;
 }
 
 .hidden {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .login-wrap {
-	/* height: 380px ; */
-	width: 350px;
-	background-color: #fff;
-	border: 1px solid #e6e6e6;
-	border-radius: 1px;
-	text-align: center;
-	padding: 0 41px 20px 41px;
-	position: relative;
+  /* height: 380px ; */
+  width: 350px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  text-align: center;
+  padding: 0 41px 20px 41px;
+  position: relative;
 }
 
 .logo-img {
-	background: url(../../img/logo_text.png);
-	background-size: 175px 51px;
-	background-repeat: no-repeat;
-	display: block;
-	width: 175px;
-	height: 51px;
-	margin: 30px 44px;
+  background: url(../../img/logo_text.png);
+  background-size: 175px 51px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 175px;
+  height: 51px;
+  margin: 30px 44px;
 }
 
 .form-wrap {
-	width: 100%;
+  width: 100%;
 }
 
 .input-wrap {
-	width: 100%;
-	height: 38px;
-	position: relative;
+  width: 100%;
+  height: 38px;
+  position: relative;
 }
 
 input {
-	width: 100%;
-	height: 38px;
-	/* margin: 2px; */
-	font-size: 0.7em;
-	padding: 10px;
-	margin-bottom: 6px;
-	font-weight: bold;
-	border-radius: 3px;
-	border: 1px solid #e6e6e6;
-	background-color: #fafafa;
-	position: relative;
+  width: 100%;
+  height: 38px;
+  /* margin: 2px; */
+  font-size: 0.7em;
+  padding: 10px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  background-color: #fafafa;
+  position: relative;
 }
 
 input::placeholder {
-	/* 나중에 transform */
-	color: #aaaaaa;
-	position: relative;
-	top: -1px;
+  /* 나중에 transform */
+  color: #aaaaaa;
+  position: relative;
+  top: -1px;
 }
 
 input:valid {
-	/* color: red; */
-	font-weight: normal;
+  /* color: red; */
+  font-weight: normal;
 }
 .hide-show-pw-btn {
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
-	top: -32px;
-	left: 180px;
-	font-weight: 500;
-	font-size: 0.8em;
-	border: none;
-	background-color: rgba(0, 0, 0, 0);
-	cursor: pointer;
-	visibility: hidden;
-	text-align: right;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  top: -32px;
+  left: 180px;
+  font-weight: 500;
+  font-size: 0.8em;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  visibility: hidden;
+  text-align: right;
 }
 .submit-btn {
-	width: 100%;
-	height: 30px;
-	/* margin-top: 17px; */
-	position: relative;
-	top: -10px;
-	color: #fff;
-	font-weight: bold;
-	font-size: 0.8em;
-	border-radius: 5px;
-	border: 1px solid #3897f0;
-	background-color: #3897f0;
-	cursor: default;
+  width: 100%;
+  height: 30px;
+  /* margin-top: 17px; */
+  position: relative;
+  top: -10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 5px;
+  border: 1px solid #3897f0;
+  background-color: #3897f0;
+  cursor: default;
 }
 
 .forget-pw {
-	position: relative;
-	/* top: 35px; */
-	margin-top: 70px;
-	font-weight: 600;
-	font-size: 12px;
+  position: relative;
+  /* top: 35px; */
+  margin-top: 70px;
+  font-weight: 600;
+  font-size: 12px;
 }
 .forget-pw a {
-	color: #003569;
-	cursor: pointer;
+  color: #003569;
+  cursor: pointer;
 }
 
 footer {
-	/* background-color: yellow; */
-	position: fixed;
-	height: 10%;
-	/* position: relative; */
-	bottom: 0;
+  /* background-color: yellow; */
+  position: fixed;
+  height: 10%;
+  /* position: relative; */
+  bottom: 0;
 }
 
 .footer-container {
-	width: 935px;
-	height: 100%;
+  width: 935px;
+  height: 100%;
 }

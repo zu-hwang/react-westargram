@@ -1,14 +1,12 @@
-
 /*  
  *
  *  네비게이션 시작
  *
  */
 
-
- .header-nav {
+.header-nav {
   /* background-color: yellow; */
-  border-bottom : 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   background-color: #fff;
   height: 77px;
   position: fixed;
@@ -18,19 +16,17 @@
   z-index: 6;
 }
 
-
 .header-nav .container {
   /* border-right: 1px solid #dbdbdb;
   border-left: 1px solid #dbdbdb; */
-width: 935px;
-height: 100%;
-margin: 0 auto;
-padding : 26px 0;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  width: 935px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .header-nav img {
   /* height: 25px; */
@@ -42,12 +38,12 @@ align-items: center;
 .right {
   display: flex;
   position: relative;
-  width : 25%;
+  width: 25%;
   height: 36px;
   align-items: center;
 }
 
-.right div:first-child { 
+.right div:first-child {
   /* logo-icon warp*/
   height: 25px;
   padding-right: 16px;
@@ -55,7 +51,7 @@ align-items: center;
 .right div:first-child img {
   height: 25px;
   position: relative;
-  top : 0px;
+  top: 0px;
 }
 
 .right div:last-child {
@@ -64,7 +60,7 @@ align-items: center;
   나중에 트랜지션 넣는 듯 한딩 그래서
   div태그로 넣은것 같은뒝..
   */
-  border-left: 1px solid #262626; 
+  border-left: 1px solid #262626;
   padding-left: 16px;
   height: 30px;
   width: 130px;
@@ -72,7 +68,6 @@ align-items: center;
 .right div:last-child img {
   width: 103px;
   height: 30px;
-  
 }
 .border {
   /* background-color: #262626; */
@@ -86,7 +81,7 @@ align-items: center;
 }
 
 .left div {
-  padding-left :  28px;
+  padding-left: 28px;
 }
 
 .left div:last-child {
@@ -111,16 +106,15 @@ form {
   width: 100%;
 }
 .search-wrap input {
-  width : 100%;
-  height : 28px;
+  width: 100%;
+  height: 28px;
   border-radius: 3px;
-  border : 1px solid #dbdbdb;
+  border: 1px solid #dbdbdb;
   background-color: #fafafa;
   position: relative;
   display: flex;
   /* align-items: cen; */
 }
-
 
 .search-up {
   user-select: none; /* 마우스로 긁었을때 반응 없도록 !!!!*/
@@ -128,7 +122,7 @@ form {
   width: 100%;
   display: flex;
   justify-content: center;
-  top : 26px;
+  top: 26px;
 }
 
 .search-up span {
@@ -152,7 +146,7 @@ form {
 }
 
 .search-icon img {
-  opacity : 0.5;
+  opacity: 0.5;
   width: 100%;
   padding-bottom: 2px;
 }

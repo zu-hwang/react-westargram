@@ -1,154 +1,154 @@
 main {
-	height: 100%;
-	max-width: 935px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
+  height: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-	text-decoration: none;
-	color: #262626;
+  text-decoration: none;
+  color: #262626;
 }
 
 .form-div,
 input,
 button {
-	box-shadow: none;
-	outline: none;
+  box-shadow: none;
+  outline: none;
 }
 
 .hide {
-	display: none;
+  display: none;
 }
 
 .show {
-	display: block;
+  display: block;
 }
 
 .opacity-1-0 {
-	opacity: 1;
+  opacity: 1;
 }
 .opacity-0-5 {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 .visible {
-	visibility: visible;
+  visibility: visible;
 }
 
 .hidden {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .login-wrap {
-	width: 350px;
-	background-color: #fff;
-	border: 1px solid #e6e6e6;
-	border-radius: 1px;
-	text-align: center;
-	padding: 0 41px 20px 41px;
-	position: relative;
+  width: 350px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  text-align: center;
+  padding: 0 41px 20px 41px;
+  position: relative;
 }
 
 .login-wrap h1 {
-	background-image: url(img/logo_text.png);
-	background-size: 175px 51px;
-	/* background-size: ; */
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 100px;
-	margin: 17px 0px 12px;
+  background-image: url(img/logo_text.png);
+  background-size: 175px 51px;
+  /* background-size: ; */
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  margin: 17px 0px 12px;
 }
 
 .form-wrap {
-	width: 100%;
+  width: 100%;
 }
 
 .input-wrap {
-	width: 100%;
-	height: 38px;
-	position: relative;
+  width: 100%;
+  height: 38px;
+  position: relative;
 }
 
 input {
-	width: 100%;
-	height: 38px;
-	/* margin: 2px; */
-	font-size: 0.7em;
-	padding: 10px;
-	margin-bottom: 6px;
-	font-weight: bold;
-	border-radius: 3px;
-	border: 1px solid #e6e6e6;
-	background-color: #fafafa;
-	position: relative;
+  width: 100%;
+  height: 38px;
+  /* margin: 2px; */
+  font-size: 0.7em;
+  padding: 10px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  background-color: #fafafa;
+  position: relative;
 }
 
 input::placeholder {
-	/* 나중에 transform */
-	color: #aaaaaa;
-	position: relative;
-	top: -1px;
+  /* 나중에 transform */
+  color: #aaaaaa;
+  position: relative;
+  top: -1px;
 }
 
 input:valid {
-	/* color: red; */
-	font-weight: normal;
+  /* color: red; */
+  font-weight: normal;
 }
 .hide-show-pw-btn {
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
-	top: -32px;
-	left: 180px;
-	font-weight: 500;
-	font-size: 0.8em;
-	border: none;
-	background-color: rgba(0, 0, 0, 0);
-	cursor: pointer;
-	visibility: hidden;
-	text-align: right;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  top: -32px;
+  left: 180px;
+  font-weight: 500;
+  font-size: 0.8em;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  visibility: hidden;
+  text-align: right;
 }
 .submit-btn {
-	width: 100%;
-	height: 30px;
-	/* margin-top: 17px; */
-	position: relative;
-	top: -10px;
-	color: #fff;
-	font-weight: bold;
-	font-size: 0.8em;
-	border-radius: 5px;
-	border: 1px solid #3897f0;
-	background-color: #3897f0;
-	opacity: 0.4;
-	cursor: pointer;
+  width: 100%;
+  height: 30px;
+  /* margin-top: 17px; */
+  position: relative;
+  top: -10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 5px;
+  border: 1px solid #3897f0;
+  background-color: #3897f0;
+  opacity: 0.4;
+  cursor: pointer;
 }
 
 .forget-pw {
-	position: relative;
-	/* top: 35px; */
-	margin-top: 70px;
-	font-weight: 600;
-	font-size: 12px;
+  position: relative;
+  /* top: 35px; */
+  margin-top: 70px;
+  font-weight: 600;
+  font-size: 12px;
 }
 .forget-pw a {
-	color: #003569;
-	cursor: pointer;
+  color: #003569;
+  cursor: pointer;
 }
 
 footer {
-	/* background-color: yellow; */
-	position: fixed;
-	height: 10%;
-	/* position: relative; */
-	bottom: 0;
+  /* background-color: yellow; */
+  position: fixed;
+  height: 10%;
+  /* position: relative; */
+  bottom: 0;
 }
 
 .footer-container {
-	width: 935px;
-	height: 100%;
+  width: 935px;
+  height: 100%;
 }
 
 /* 매인 CSS 추가 */
@@ -160,150 +160,150 @@ footer {
  */
 
 .header-nav {
-	/* background-color: yellow; */
-	border-bottom: 1px solid #dbdbdb;
-	background-color: #fff;
-	height: 77px;
-	position: fixed;
-	/* top : 0;
+  /* background-color: yellow; */
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
+  height: 77px;
+  position: fixed;
+  /* top : 0;
   left: 0; */
-	width: 100%;
-	z-index: 6;
+  width: 100%;
+  z-index: 6;
 }
 
 .header-nav .container {
-	/* border-right: 1px solid #dbdbdb;
+  /* border-right: 1px solid #dbdbdb;
   border-left: 1px solid #dbdbdb; */
-	width: 935px;
-	height: 100%;
-	margin: 0 auto;
-	padding: 26px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 935px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-nav img {
-	/* height: 25px; */
-	max-height: 30px;
-	position: relative;
-	top: 2px;
+  /* height: 25px; */
+  max-height: 30px;
+  position: relative;
+  top: 2px;
 }
 
 .right {
-	display: flex;
-	position: relative;
-	width: 25%;
-	height: 36px;
-	align-items: center;
+  display: flex;
+  position: relative;
+  width: 25%;
+  height: 36px;
+  align-items: center;
 }
 
 .right div:first-child {
-	/* logo-icon warp*/
-	height: 25px;
-	padding-right: 16px;
+  /* logo-icon warp*/
+  height: 25px;
+  padding-right: 16px;
 }
 .right div:first-child img {
-	height: 25px;
-	position: relative;
-	top: 0px;
+  height: 25px;
+  position: relative;
+  top: 0px;
 }
 
 .right div:last-child {
-	/* log-text warp*/
-	/* 여기 보더 라인넣는것 말고 배경화면 방식으로 하는거는 오또케햄? 
+  /* log-text warp*/
+  /* 여기 보더 라인넣는것 말고 배경화면 방식으로 하는거는 오또케햄? 
   나중에 트랜지션 넣는 듯 한딩 그래서
   div태그로 넣은것 같은뒝..
   */
-	border-left: 1px solid #262626;
-	padding-left: 16px;
-	height: 30px;
-	width: 130px;
+  border-left: 1px solid #262626;
+  padding-left: 16px;
+  height: 30px;
+  width: 130px;
 }
 .right div:last-child img {
-	width: 103px;
-	height: 30px;
+  width: 103px;
+  height: 30px;
 }
 .border {
-	/* background-color: #262626; */
-	/* width: 1px; */
+  /* background-color: #262626; */
+  /* width: 1px; */
 }
 
 .left {
-	width: 25%;
-	display: flex;
-	justify-content: flex-end;
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .left div {
-	padding-left: 28px;
+  padding-left: 28px;
 }
 
 .left div:last-child {
-	padding-right: 0px;
+  padding-right: 0px;
 }
 .left img {
-	height: 24px;
+  height: 24px;
 }
 .img-explore {
-	height: 28px;
+  height: 28px;
 }
 .center {
-	height: 77px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 215px;
-	position: relative;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 215px;
+  position: relative;
 }
 
 form {
-	width: 100%;
+  width: 100%;
 }
 .search-wrap input {
-	width: 100%;
-	height: 28px;
-	border-radius: 3px;
-	border: 1px solid #dbdbdb;
-	background-color: #fafafa;
-	position: relative;
-	display: flex;
-	/* align-items: cen; */
+  width: 100%;
+  height: 28px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  background-color: #fafafa;
+  position: relative;
+  display: flex;
+  /* align-items: cen; */
 }
 
 .search-up {
-	user-select: none; /* 마우스로 긁었을때 반응 없도록 !!!!*/
-	position: absolute;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	top: 26px;
+  user-select: none; /* 마우스로 긁었을때 반응 없도록 !!!!*/
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 26px;
 }
 
 .search-up span {
-	font-size: 0.85em;
-	font-weight: normal;
-	color: #999;
-	z-index: 5;
-	padding-top: 1px;
+  font-size: 0.85em;
+  font-weight: normal;
+  color: #999;
+  z-index: 5;
+  padding-top: 1px;
 }
 .search-icon {
-	position: absolute;
-	width: 10px;
-	/* background-position: -400px -400px; */
-	/* background-size: contain; */
-	/* background-color: lawngreen; */
-	/* background: url(../img/searchicon.png)  -450px -688px; */
-	position: relative;
-	/* top: 3px; */
-	margin-right: 6px;
-	z-index: 5;
+  position: absolute;
+  width: 10px;
+  /* background-position: -400px -400px; */
+  /* background-size: contain; */
+  /* background-color: lawngreen; */
+  /* background: url(../img/searchicon.png)  -450px -688px; */
+  position: relative;
+  /* top: 3px; */
+  margin-right: 6px;
+  z-index: 5;
 }
 
 .search-icon img {
-	opacity: 0.5;
-	width: 100%;
-	padding-bottom: 2px;
+  opacity: 0.5;
+  width: 100%;
+  padding-bottom: 2px;
 }
 
 /*  
@@ -313,191 +313,191 @@ form {
  */
 
 main {
-	width: 935px;
-	/* background-color: lawngreen; */
-	height: 100%;
-	padding-top: 127px;
+  width: 935px;
+  /* background-color: lawngreen; */
+  height: 100%;
+  padding-top: 127px;
 }
 
 .feeds {
-	/* background-color: lightblue; */
-	width: 100%;
-	height: 700px;
-	margin-right: 28px;
-	width: 614px;
+  /* background-color: lightblue; */
+  width: 100%;
+  height: 700px;
+  margin-right: 28px;
+  width: 614px;
 }
 
 article {
-	width: 100%;
-	border: 1px solid #dbdbdb;
-	border-radius: 3px;
-	background-color: #fff;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
 }
 
 .main-right {
-	/* background-color: blueviolet;  */
-	width: 293px;
+  /* background-color: blueviolet;  */
+  width: 293px;
 }
 
 .my-pic-wrap {
-	width: 50px;
-	height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .my-pic-wrap img {
-	border-radius: 25px;
-	width: 100%;
+  border-radius: 25px;
+  width: 100%;
 }
 
 .my-pic-text {
-	margin-left: 14px;
-	display: flex;
-	flex-direction: column;
-	font-size: medium;
-	position: relative;
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  position: relative;
 }
 
 .my-pic-text div:first-child {
-	font-weight: 500;
-	position: relative;
-	top: 8px;
+  font-weight: 500;
+  position: relative;
+  top: 8px;
 }
 .my-pic-text div:last-child {
-	font-weight: normal;
-	font-size: small;
+  font-weight: normal;
+  font-size: small;
 }
 
 .my-profile-wrap {
-	display: flex;
-	flex-direction: row;
-	z-index: -1;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
 }
 
 .side-box {
-	margin-top: 12px;
-	height: 223px;
-	border: 1px solid #dbdbdb;
-	border-radius: 3px;
-	background-color: #fff;
+  margin-top: 12px;
+  height: 223px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
 }
 .side-box:last-child {
-	height: 194px;
+  height: 194px;
 }
 .side-list-wrap {
-	height: 173px;
+  height: 173px;
 }
 .side-list {
-	overflow: scroll;
-	/* background-color: rgba(55, 55, 55, .5); */
-	height: 100%;
-	padding-left: 16px;
-	margin-top: 8px;
+  overflow: scroll;
+  /* background-color: rgba(55, 55, 55, .5); */
+  height: 100%;
+  padding-left: 16px;
+  margin-top: 8px;
 }
 
 .side-title {
-	padding: 4px 16px;
+  padding: 4px 16px;
 }
 
 .side-title {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	padding-top: 16px;
-	position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 16px;
+  position: relative;
 }
 
 .side-title div:first-child {
-	color: #999;
-	font-weight: bold;
+  color: #999;
+  font-weight: bold;
 }
 
 .side-title div:last-child {
-	color: #262626;
-	font-size: small;
-	font-weight: 400;
-	position: relative;
-	top: -2px;
+  color: #262626;
+  font-size: small;
+  font-weight: 400;
+  position: relative;
+  top: -2px;
 }
 
 /* 사이드 유저 정보 */
 
 .user-pic-wrap {
-	width: 34px;
-	/* height: 34px; */
+  width: 34px;
+  /* height: 34px; */
 }
 
 .user-profile-wrap img {
-	border-radius: 25px;
-	width: 100%;
+  border-radius: 25px;
+  width: 100%;
 }
 
 .user-profile-text {
-	margin-left: 14px;
-	display: flex;
-	flex-direction: column;
-	font-size: medium;
-	position: relative;
-	/* top : -4px; */
-	width: 100%;
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  position: relative;
+  /* top : -4px; */
+  width: 100%;
 }
 
 .user-profile-text div:first-child {
-	font-weight: 500;
-	font-size: 15px;
-	position: relative;
-	top: -1px;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  top: -1px;
 }
 .user-profile-text div:last-child {
-	font-weight: normal;
-	font-size: 12px;
-	color: #999;
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
 }
 
 .user-profile-wrap {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-	justify-content: flex-start;
-	z-index: -1;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  z-index: -1;
 }
 
 .side-foot {
-	margin-top: 12px;
-	color: #c7c7c7;
-	font-size: 12px;
+  margin-top: 12px;
+  color: #c7c7c7;
+  font-size: 12px;
 }
 
 .side-foot ul {
-	margin-right: 6px;
-	margin-bottom: 12px;
+  margin-right: 6px;
+  margin-bottom: 12px;
 }
 .side-foot li {
-	display: inline;
-	line-height: 1.5em;
+  display: inline;
+  line-height: 1.5em;
 }
 
 .side-foot li:after {
-	content: ' ・ ';
+  content: ' ・ ';
 }
 .side-foot li:last-child:after {
-	content: '';
+  content: '';
 }
 
 .side-foot a {
-	color: #c7c7c7;
+  color: #c7c7c7;
 }
 
 .follow-btn {
-	padding-right: 16px;
-	float: right;
+  padding-right: 16px;
+  float: right;
 }
 
 .follow-btn button {
-	color: #3897f0;
-	/* width: 100%; */
-	border: none;
-	font-size: 12px;
-	font-weight: normal;
+  color: #3897f0;
+  /* width: 100%; */
+  border: none;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 /*
@@ -505,228 +505,228 @@ Feeds
 */
 
 article {
-	margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 .feed-user-id-box {
-	/* overflow: hidden; */
-	height: 60px;
-	display: flex;
-	/* justify-content: space-between; */
-	justify-content: flex-start;
-	padding: 16px;
-	border-bottom: 1px solid #efefef;
+  /* overflow: hidden; */
+  height: 60px;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  padding: 16px;
+  border-bottom: 1px solid #efefef;
 }
 .user-pic {
-	width: 32px;
-	height: 32px;
+  width: 32px;
+  height: 32px;
 }
 .feed-user-pic-wrap {
-	width: 32px;
-	height: 32px;
-	position: relative;
+  width: 32px;
+  height: 32px;
+  position: relative;
 }
 
 .feed-user-pic-wrap img {
-	width: 100%;
-	border-radius: 32px;
-	position: relative;
-	top: -1px;
+  width: 100%;
+  border-radius: 32px;
+  position: relative;
+  top: -1px;
 }
 
 .feed-user-id {
-	margin-left: 15px;
-	position: relative;
-	top: 5px;
-	font-size: 14px;
-	font-weight: 600;
+  margin-left: 15px;
+  position: relative;
+  top: 5px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .feed-three-dot-wrap {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	width: 100%;
-	position: relative;
-	top: 2px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  top: 2px;
 }
 .three-dot-menu img {
-	width: 25px;
-	height: 25zpx;
-	/* background-color: yellow; */
+  width: 25px;
+  height: 25zpx;
+  /* background-color: yellow; */
 }
 
 /* 피드 이미지 */
 
 .feed-img-wrap {
-	display: block;
-	overflow: hidden;
-	width: 100%;
-	/* height: 612px;  */
-	/* 여기서 높이 지정안하고 이미지 높이 상속받으려면 오케함..ㅠ 노랑이 계속 모여서 듄나 짱남.*/
-	background-color: yellow;
-	border-bottom: 1px solid #efefef;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  /* height: 612px;  */
+  /* 여기서 높이 지정안하고 이미지 높이 상속받으려면 오케함..ㅠ 노랑이 계속 모여서 듄나 짱남.*/
+  background-color: yellow;
+  border-bottom: 1px solid #efefef;
 }
 .feed-img-wrap img {
-	width: 100%;
-	max-height: inherit;
-	display: block;
-	/* 민지님 추측 > 이미지는 기본 display:inline; 인라인 자체에 여윳값이 들어가도록 설정되어있는것이아닐까? 왜 블럭은 되고 인라인은 공백이 생겨 ?   */
-	/* display: inline; */
+  width: 100%;
+  max-height: inherit;
+  display: block;
+  /* 민지님 추측 > 이미지는 기본 display:inline; 인라인 자체에 여윳값이 들어가도록 설정되어있는것이아닐까? 왜 블럭은 되고 인라인은 공백이 생겨 ?   */
+  /* display: inline; */
 }
 
 /* 피드 아이콘 */
 
 .feed-icons-wrap {
-	height: 56px;
-	padding: 16px 0 16px 16px;
-	display: flex;
-	justify-content: space-between;
+  height: 56px;
+  padding: 16px 0 16px 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .feed-icons-left {
-	display: flex;
-	justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .feed-icons-wrap img {
-	width: 24px;
-	margin-right: 16px;
+  width: 24px;
+  margin-right: 16px;
 }
 .icon-bookmark > img {
-	margin-right: 0px;
+  margin-right: 0px;
 }
 
 /* 피드 좋아요 버튼 */
 .feed-like-text-wrap {
-	margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 .feed-like-text-wrap button {
-	border: none;
-	font-size: 14px;
-	font-weight: 600;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* 피드 댓글 목록*/
 
 .feed-repl-wrap {
-	border-bottom: 1px solid #efefef;
-	padding: 0px 16px 5px 16px;
-	font-size: 14px;
-	letter-spacing: -0.3px;
+  border-bottom: 1px solid #efefef;
+  padding: 0px 16px 5px 16px;
+  font-size: 14px;
+  letter-spacing: -0.3px;
 }
 .feed-repl-wrap span {
-	padding: 2px 0;
+  padding: 2px 0;
 }
 .feed-repl-wrap span a {
-	font-weight: normal;
-	font-size: 13px;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 .feed-repl-wrap a.user-id {
-	margin-right: 5px;
-	font-weight: bold;
+  margin-right: 5px;
+  font-weight: bold;
 }
 
 .feed-repl-wrap button.all-repl {
-	border: none;
-	display: inline-block;
-	font-weight: 600;
-	font-size: 12px;
-	padding-left: 3px;
-	color: #c7c7c7;
+  border: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding-left: 3px;
+  color: #c7c7c7;
 }
 
 .feed-repls > span {
-	display: inline-block;
-	width: 100%;
-	padding-bottom: 5px;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 5px;
 }
 
 .others-repl {
-	display: flex;
-	position: relative;
+  display: flex;
+  position: relative;
 }
 
 button.repl-hover-three-dot {
-	float: right;
-	position: absolute;
-	right: 37px;
-	/* top : 9px; */
-	border: none;
-	width: 10px;
+  float: right;
+  position: absolute;
+  right: 37px;
+  /* top : 9px; */
+  border: none;
+  width: 10px;
 }
 button.repl-hover-three-dot img {
-	display: block;
-	width: 20px;
+  display: block;
+  width: 20px;
 }
 .others-repl-icons-wrap {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .mention {
-	margin-right: 5px;
-	color: #003569;
+  margin-right: 5px;
+  color: #003569;
 }
 .mention a {
-	color: #003569;
+  color: #003569;
 }
 
 .feed-time {
-	font-size: 10px;
-	color: #c7c7c7;
+  font-size: 10px;
+  color: #c7c7c7;
 }
 
 .heart-btn {
-	display: inline-block;
-	position: relative;
-	top: 4px;
-	float: right;
-	height: 14px;
-	width: 14px;
-	opacity: 0.5;
-	border: none;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  float: right;
+  height: 14px;
+  width: 14px;
+  opacity: 0.5;
+  border: none;
 }
 
 .heart-btn img {
-	width: 100%;
+  width: 100%;
 }
 
 /* 피드 댓글 쓰기 */
 .send-repl-wrap {
-	height: 56px;
-	padding: 10px 0 10px 16px;
-	display: flex;
-	justify-content: space-between;
+  height: 56px;
+  padding: 10px 0 10px 16px;
+  display: flex;
+  justify-content: space-between;
 }
 .send-repl-wrap .form-div {
-	width: 92%;
-	position: relative;
+  width: 92%;
+  position: relative;
 }
 .send-repl-wrap input {
-	border: none;
-	width: 100%;
-	font-size: 14px;
-	position: relative;
-	background-color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  position: relative;
+  background-color: #fff;
 }
 
 .send-repl-wrap input::placeholder {
-	color: #c7c7c7;
-	font-size: 14px;
-	position: relative;
+  color: #c7c7c7;
+  font-size: 14px;
+  position: relative;
 }
 
 .submit-wrap {
-	position: absolute;
-	right: -37px;
-	bottom: 8px;
+  position: absolute;
+  right: -37px;
+  bottom: 8px;
 }
 
 .submit-wrap button {
-	color: #003569;
-	border: none;
-	font-weight: 600;
-	font-size: 14px;
-	cursor: pointer;
+  color: #003569;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
 }

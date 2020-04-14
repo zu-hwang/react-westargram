@@ -7,62 +7,62 @@
  */
 
 main {
-	width: 935px;
-	/* background-color: lawngreen; */
-	height: 100%;
-	padding-top: 127px;
+  width: 935px;
+  /* background-color: lawngreen; */
+  height: 100%;
+  padding-top: 127px;
 }
 
 .feeds {
-	/* background-color: lightblue; */
-	width: 100%;
-	height: 700px;
-	margin-right: 28px;
-	width: 614px;
+  /* background-color: lightblue; */
+  width: 100%;
+  height: 700px;
+  margin-right: 28px;
+  width: 614px;
 }
 
 article {
-	width: 100%;
-	border: 1px solid #dbdbdb;
-	border-radius: 3px;
-	background-color: #fff;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
 }
 
 .main-right {
-	/* background-color: blueviolet;  */
-	width: 293px;
+  /* background-color: blueviolet;  */
+  width: 293px;
 }
 
 .my-pic-wrap {
-	width: 50px;
-	height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .my-pic-wrap img {
-	border-radius: 25px;
-	width: 100%;
+  border-radius: 25px;
+  width: 100%;
 }
 
 .my-pic-text {
-	margin-left: 14px;
-	display: flex;
-	flex-direction: column;
-	font-size: medium;
-	position: relative;
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  position: relative;
 }
 
 .my-pic-text div:first-child {
-	font-weight: 500;
-	position: relative;
-	top: 8px;
+  font-weight: 500;
+  position: relative;
+  top: 8px;
 }
 .my-pic-text div:last-child {
-	font-weight: normal;
-	font-size: small;
+  font-weight: normal;
+  font-size: small;
 }
 
 .my-profile-wrap {
-	display: flex;
-	flex-direction: row;
-	z-index: -1;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
 }

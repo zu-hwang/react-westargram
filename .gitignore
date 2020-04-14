@@ -27,3 +27,4 @@ yarn-error.log*
 
 #config 설정파일 제거
 ./config.js
+./src/코드리뷰.md

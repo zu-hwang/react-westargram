@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import "./App.css";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import "react-app-polyfill/ie9";
+import "react-app-polyfill/stable";
 // import App from './App';
 import Routes from "./Routes";
+import "./index.css";
+import "./App.css";
 
 ReactDOM.render(<Routes />, document.getElementById("root"));
 

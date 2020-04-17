@@ -22,9 +22,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+.yarn.lock
 .vscode
 
 #config 설정파일 제거
 ./config.js
 ./src/코드리뷰.md
+.

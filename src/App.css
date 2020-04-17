@@ -319,14 +319,6 @@ main {
   padding-top: 127px;
 }
 
-.feeds {
-  /* background-color: lightblue; */
-  width: 100%;
-  height: 700px;
-  margin-right: 28px;
-  width: 614px;
-}
-
 article {
   width: 100%;
   border: 1px solid #dbdbdb;

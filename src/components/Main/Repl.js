@@ -25,6 +25,7 @@ class Repl extends Component {
   };
 
   render() {
+    console.log(this.props.replUser);
     return (
       <span
         id={this.props.id}

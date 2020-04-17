@@ -1,36 +1,12 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { API_URL } from "../../../config";
+import { API_URL } from "../../config";
 import "./Login.css";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userinfo: [],
-      // userinfo: [
-      // 	{
-      // 		id: '0',
-      // 		userid: 'zuzu',
-      // 		password: '0000',
-      // 		img: '',
-      // 		intro: ''
-      // 	},
-      // 	{
-      // 		id: '1',
-      // 		userid: 'wecode',
-      // 		password: '1111',
-      // 		img: '',
-      // 		intro: ''
-      // 	},
-      // 	{
-      // 		id: '2',
-      // 		userid: 'wework',
-      // 		password: '2222',
-      // 		img: '',
-      // 		intro: ''
-      // 	}
-      // ],
       userid: "",
       password: "",
       btnOpacityToggle: false,
@@ -47,11 +23,8 @@ class Login extends Component {
   handleClick = (e) => {
     // e.preventDefault();
     console.log("버튼클릭 이벤트 시작");
-    fetch("http://10.58.4.9:8000/account/sign_in", {
+    fetch(API_URL + "/account/sign_in", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
         user_name: this.state.userid,
         password: this.state.password,

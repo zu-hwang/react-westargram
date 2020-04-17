@@ -1,23 +1,21 @@
 import React, { Component } from "react";
 import Repl from "./Repl";
+
 // 스타일 임포트
 import "../Main/Feed.css";
-// 이미지 임포트
-import UserPic from "../../img/my-pic.jpg";
-import FeedPic from "../../img/2.jpg";
 
 class Feed extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      userid: localStorage.getItem("userid"),
       repl: [],
       replShow: true,
       btnRepl: false,
       replVal: "",
-
       selectrepl: "",
+      loginUser: this.props.loginUser,
     };
+
     this.styleTrue = "repl-hover-three-dot visible";
     this.styleFalse = "repl-hover-three-dot hidden";
     this.replId = 0;
@@ -48,7 +46,7 @@ class Feed extends Component {
     let replArr = this.state.repl;
     replArr.push(repl);
     this.setState({ repl: replArr, replVal: "", btnRepl: false });
-    console.log("페인트완료 & 인풋창 리셋");
+    // console.log("페인트완료 & 인풋창 리셋");
     return true;
   };
 
@@ -80,24 +78,22 @@ class Feed extends Component {
       this.setState({ replShow: true });
       this.setState({ replShowMax: false });
     } else if (this.replId >= this.maxRepl) {
-      // ? 댓글 3개 이상일때, 안내문에 댓글 모두보기 오픈,
-      // ? 최신 댓글 2개 오픈
+      // ! 댓글 3개 이상일때, 안내문에 댓글 모두보기 오픈,
+      // ! 최신 댓글 2개 오픈
       this.setState({ replShowMax: true }); // for 실행
       this.setState({ replshow: false }); // map 실행
     }
   };
   handleDelRepl = (e) => {
-    console.log("과연실행될뀨?");
+    // console.log("과연실행될뀨?");
     const newRepl = this.state.repl.filter(
       (rp) => rp.id !== e.tergat.parentNode.id
     );
     this.setState({ repl: newRepl });
   };
-  componentWillUnmount = () => {
-    console.log("componentWillUnmount");
-  };
 
   render() {
+    const { data } = this.props;
     return (
       <div className="feeds">
         <article>
@@ -105,9 +101,9 @@ class Feed extends Component {
           {/* <!-- 상단 유저 아이디 박스 --> */}
           <div className="feed-user-id-box">
             <div className="feed-user-pic-wrap">
-              <img src={UserPic} alt="" />
+              <img src={data.author_img} alt="" />
             </div>
-            <div className="feed-user-id">{this.state.userid}</div>
+            <div className="feed-user-id">{data.author}</div>
             <div className="feed-three-dot-wrap">
               <div className="three-dot-menu">
                 <a href="/">
@@ -118,7 +114,7 @@ class Feed extends Component {
           </div>
           {/* <!-- 피드 사진 --> */}
           <div className="feed-img-wrap">
-            <img src={FeedPic} alt="" />
+            <img src={data.image_url} alt="" />
           </div>
           {/* <!-- 피드 아이콘 --> */}
           <div className="feed-icons-wrap">
@@ -161,21 +157,15 @@ class Feed extends Component {
           <div className="feed-repl-wrap">
             <div className="feed-like-text-wrap">
               <button>
-                좋아요 <span>151</span>개
+                좋아요 <span>{data.like}</span>개
               </button>
             </div>
             <div className="feed-repls">
               <span>
                 <a href="/" className="user-id">
-                  {this.state.userid}
+                  {data.author}
                 </a>
-                안녕하세요 ! 간만에 파티이머지 입니다. 작업실은 이제 많이 준비가
-                되었답니다. 그래도 아직 손봐야하는 것들도 많고 들어와야하는
-                <span role="img" aria-label="cying">
-                  😭
-                </span>{" "}
-                잠시 시간이 나서 카카오톡으로 연락 주신
-                <span>...</span>
+                {data.content}
                 <button className="all-repl">더보기</button>
               </span>
               {/* 여기부터 댓글 더보기*/}
